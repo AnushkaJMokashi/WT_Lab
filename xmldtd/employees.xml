@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees SYSTEM "employees.dtd">
+<?xml-stylesheet type="text/xsl" href="employees.xsl"?>
+<employees>
+    <employee>
+        <id>1</id>
+        <name>Anushka Mokashi</name>
+        <department>Engineering</department>
+        <position>Data Engineer</position>
+        <salary>505000</salary>
+    </employee>
+    <employee>
+        <id>2</id>
+        <name>Jane Smith</name>
+        <department>Marketing</department>
+        <position>Marketing Manager</position>
+        <salary>85000</salary>
+    </employee>
+    <employee>
+        <id>3</id>
+        <name>John Doe</name>
+        <department>Sales</department>
+        <position>Sales Manager</position>
+        <salary>65000</salary>
+    </employee>
+    <employee>
+        <id>3</id>
+        <name> John Abraham</name>
+        <department>Business Intelligence</department>
+        <position>Manager</position>
+        <salary>65000</salary>
+    </employee>
+    <employee>
+        <id>4</id>
+        <name> Picha Kumar</name>
+        <department>Engineering</department>
+        <position>Software Engineer</position>
+        <salary>300000</salary>
+    </employee>
+
+</employees>
