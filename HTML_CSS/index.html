@@ -3,47 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Flower Shop</title>
 </head>
 <body>
+<div id="container">
     <header>
-        <h1>Delicious Eats</h1>
+        <h1>Flower Emporium</h1>
         <nav>
             <ul>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section class="hero">
-        <h2>Welcome to Delicious Eats</h2>
-        <p>Discover the finest flavors from around the world.</p>
-        <a href="#menu" class="btn">View Menu</a>
+    <section class="home" id="home">
+        <h2>Welcome to flower World</h2>
+        <p>Explore our collection of beautiful flowera</p>
     </section>
-    <section id="menu" class="menu">
-        <h2>Our Menu</h2>
-        <div class="menu-item">
-            <h3>Specialty Pizza</h3>
-            <p>Our signature pizza made with fresh ingredients.</p>
-            <span>$12.99</span>
-        </div>
-        <div class="menu-item">
-            <h3>Grilled Salmon</h3>
-            <p>Fresh salmon grilled to perfection.</p>
-            <span>$15.99</span>
-        </div>
-        <!-- Add more menu items here -->
+
+    <section class="gallery" id="gallery">
+        <h2>Our Gallery</h2>
+        <div class="image-container"></div>
+            <img src="rose.jpeg" alt="Rose">
+            <img src="rose.jpeg" alt="Rose">
+            <img src="rose.jpeg" alt="Rose">
+            <img src="rose.jpeg" alt="ROse">
     </section>
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>Learn about our history and commitment to quality.</p>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
     </section>
-    <footer id="contact" class="footer">
-        <p>Contact us for reservations and inquiries:</p>
-        <p>123 Main Street, Cityville</p>
-        <p>Phone: 123-456-7890</p>
-    </footer>
+</div>
 </body>
 </html>
