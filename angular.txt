@@ -1,0 +1,95 @@
+
+appDemo.html 
+<!DOCTYPE html>  
+<html ng-app="myApp">  
+<head>  
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title>AnushkaAppDemo</title> 
+<link rel="stylesheet"  
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>  
+</head>  
+<body ng-app="myApp">  
+<div class = "row">  
+<div class = "col-sm-12 well">  
+<center><h1>OUR WEB SITE</h1></center>  
+</div>  
+</div>  
+<div class="row">  
+<div class ="col-sm-4 well" style = "background-color:pink;height:500px">  
+<ul>  
+<li><a href="#/">Home</a></li>  
+<li><a href="#/registration">Registration</a></li>  
+<li><a href="#/login">Login</a></li>  
+</ul> 
+</div>  
+<div class ="col-sm-8 well" style="background-color:aqua;height:500px">  
+<div ng-view></div>  
+</div>  
+</div>  
+<script src="appDemo.js"></script>  
+</body>  
+</html> 
+appDemo.js 
+var app = angular.module('myApp', ['ngRoute']);  
+app.config(function($routeProvider) {  
+$routeProvider  
+.when('/', {  
+templateUrl : 'home.html',  
+controller : 'HomeController'  
+})  
+.when('/registration', {  
+templateUrl : 'registration.html',  
+controller : 'RegistrationController'  
+})  
+.when('/login', {  
+templateUrl : 'login.html',  
+controller : 'LoginController'  
+})  
+.otherwise({redirectTo: '/'});  
+});  
+app.controller('HomeController', function($scope) {  
+$scope.message = 'Welcome to a home page';  
+});  
+app.controller('RegistrationController', function($scope) {  
+$scope.message = 'Please fill up the Registration form(New User)';  
+$scope.submitRegistrationForm = function() { 
+}; 
+});  
+app.controller('LoginController', function($scope) {  
+$scope.message = 'Please fill up the Login form(Existing User)';  
+$scope.submitLoginForm = function() { 
+}; 
+}); 
+home.html 
+<div>  
+<center><h3>{{message}}</h3></center>         
+</div>  
+<div>  
+<center>  
+<img src="welcome.jpeg">            
+</center>  
+</div> 
+registration.html 
+<html>  
+<head>  
+<title>  
+Registration Form  
+</title>  
+</head>  
+<body>  
+<h3>{{message}}</h3>  
+<form>  
+<p>First Name:<input type="text" name="fname"></p>  
+<p>Last Name:<input type="text" name="lname"></p>  
+<p>User Name:<input type="text" name="username"></p>  
+<p>Password:<input type="password" name="password"></p>  
+<p><input type="submit" value="submit"></p>  
+</form>  
+</body>  
+</html> 
+OUTPUT: 

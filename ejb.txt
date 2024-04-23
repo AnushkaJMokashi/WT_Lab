@@ -1,0 +1,78 @@
+Code:
+Index.html
+ <html>
+ </html>
+ <head>
+ </head>
+ <body>
+ </body>
+ <title>Implement Bank Application using EJB</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <form method="post" action="transact">
+ <h1>Bank Application using EJB </h1>
+ Enter Amount : <input type="text" name="t1" />
+ <h3>Select option</h3>
+ <input type="radio" name="transaction"value="deposite" />Deposite<br/>
+ <input type="radio" name="transaction"value="withdraw" />withdraw<br/>
+ <input type="submite" value="submite" />
+ </form>
+ transact.java
+ import java.io.IOException;
+ import java.io.PrintWriter;
+ import javax.servlet.ServletException;
+ import javax.servlet.http.HttpServlet;
+ import javax.servlet.http.HttpServletRequest;
+ import javax.servlet.http.HttpServletResponse;
+ public class transact extends httpServlet {
+ protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+ {
+ response.setContentType("text/html;charset=UTF-8");
+ try
+ {
+ }
+ }
+ PrintWriter out = response.getWriter()};
+ String selectdType=request.getParameter("transact");
+ int amount=Integer.ParseInt(request.getParameter(t1));
+ if(selectdType.equals("deposite"))
+ {
+ bankTransact.deposite(amount);
+ }
+ if(selectdType.equals("withdraw"))
+ {
+ int amt=bankTransact.withdraw(amount);
+ out.println(amount="successfully withdraw. Your Balance is: Rs"+ amt)
+ }
+ private BankTransactLocal lookupBankTransactLocal()
+ {
+ try
+ {
+ }
+ Context c= New initialContext();
+ return(BankTransactLocal)c.Lookup("java.global/Bank/Bank-ejb/BankTransact!Bankexamp.Bank/Bank
+ejb/BankTransactLocal")
+ catch (NamingException ne)
+}
+ {
+ Logger.getLogger(getClass().getName().log(Level.SEVERE,"exception caught",ne))
+ throw new RuntimeException(ne);
+ }
+ BankTransact.java
+ package bankexamp;
+ inport javax.ejb.Statful;
+ @Stateful
+ public class BankTransact implements BankTransactLocal{
+ int balance=10000;
+ @override
+ public int deposit (int amount){
+ balance=balance+amount;
+ return balance;
+ }
+ @override
+ public int withdraw (int amount){
+ balance=balance-amount
+ return balance;
+ }
+ }
+Output:
